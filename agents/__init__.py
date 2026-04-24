@@ -1,6 +1,6 @@
-from agents.dorl import DORLAgent
+from agents.drol import DROLAgent
 
 
 agents = dict(
-    dorl=DORLAgent,
+    drol=DROLAgent,
 )

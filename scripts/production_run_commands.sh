@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-# Run this script from /Users/muzhancun/workspace/fql/dorl.
+# Run this script from /Users/muzhancun/workspace/fql/drol.
 # It collects the production commands used to reproduce the DROL runs.
 #
 # Sections:
@@ -28,7 +28,7 @@ run_ogbench_family() {
   for task in 1 2 3 4 5; do
     python main.py \
       --env_name="${family}-task${task}-v0" \
-      --agent=agents/dorl.py \
+      --agent=agents/drol.py \
       --run_group=production \
       --agent.bc_coef="${bc_coef}" \
       --agent.num_candidates="${num_candidates}" \
@@ -45,7 +45,7 @@ run_d4rl_env() {
 
   python main.py \
     --env_name="${env_name}" \
-    --agent=agents/dorl.py \
+    --agent=agents/drol.py \
     --offline_steps=500000 \
     --run_group=production \
     --agent.bc_coef="${bc_coef}" \

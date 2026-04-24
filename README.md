@@ -54,7 +54,7 @@ dependencies in `requirements.txt`.
 
 ## Usage
 
-The main DROL implementation is in [agents/dorl.py](agents/dorl.py). The
+The main DROL implementation is in [agents/drol.py](agents/drol.py). The
 DROL-only training entrypoint is [main.py](main.py).
 
 Run a default OGBench experiment from this folder:
@@ -84,7 +84,7 @@ python main.py \
   --agent.num_candidates=16
 ```
 
-The default config path is `agents/dorl.py`, so `--agent=agents/dorl.py` is not
+The default config path is `agents/drol.py`, so `--agent=agents/drol.py` is not
 required for ordinary runs.
 
 ## Tips For Hyperparameter Tuning
@@ -123,12 +123,12 @@ It contains the exact command groups used for:
 - D4RL tuned supporting reruns.
 
 The script has been adapted for this minimal folder and uses
-`--agent=agents/dorl.py`.
+`--agent=agents/drol.py`.
 
 ## Repository Layout
 
 - `main.py`: DROL-only offline/offline-to-online training entrypoint.
-- `agents/dorl.py`: DROL agent, losses, action sampling, and config.
+- `agents/drol.py`: DROL agent, losses, action sampling, and config.
 - `envs/`: OGBench and D4RL environment/dataset construction.
 - `utils/`: dataset, evaluation, Flax, network, encoder, and logging helpers.
 - `scripts/production_run_commands.sh`: paper production commands.

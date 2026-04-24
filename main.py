@@ -11,7 +11,7 @@ import wandb
 from absl import app, flags
 from ml_collections import config_flags
 
-from agents import DORLAgent
+from agents import DROLAgent
 from envs.env_utils import make_env_and_datasets
 from utils.datasets import Dataset, ReplayBuffer
 from utils.evaluation import evaluate, flatten
@@ -42,7 +42,7 @@ flags.DEFINE_float('p_aug', None, 'Probability of applying image augmentation.')
 flags.DEFINE_integer('frame_stack', None, 'Number of frames to stack.')
 flags.DEFINE_integer('balanced_sampling', 0, 'Whether to use balanced sampling for online fine-tuning.')
 
-_DEFAULT_AGENT_CONFIG = os.path.join(os.path.dirname(__file__), 'agents', 'dorl.py')
+_DEFAULT_AGENT_CONFIG = os.path.join(os.path.dirname(__file__), 'agents', 'drol.py')
 config_flags.DEFINE_config_file('agent', _DEFAULT_AGENT_CONFIG, lock_config=False)
 
 
@@ -93,10 +93,10 @@ def main(_):
     # Create agent.
     example_batch = train_dataset.sample(1)
 
-    if config['agent_name'] != 'dorl':
-        raise ValueError(f"This minimal entrypoint only supports agent_name='dorl', got {config['agent_name']!r}.")
+    if config['agent_name'] != 'drol':
+        raise ValueError(f"This minimal entrypoint only supports agent_name='drol', got {config['agent_name']!r}.")
 
-    agent = DORLAgent.create(
+    agent = DROLAgent.create(
         FLAGS.seed,
         example_batch['observations'],
         example_batch['actions'],

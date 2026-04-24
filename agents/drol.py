@@ -34,7 +34,7 @@ def safe_norm(x: jnp.ndarray, axis: int = None, keepdims: bool = False, eps: Flo
     """Compute the norm of a vector, with a small epsilon to avoid division by zero."""
     return jnp.sqrt(jnp.sum(x ** 2, axis=axis, keepdims=keepdims) + eps)
 
-class DORLAgent(flax.struct.PyTreeNode):
+class DROLAgent(flax.struct.PyTreeNode):
     """Minimal hard-best FQL variant with K-candidate matching."""
 
     rng: Any
@@ -370,7 +370,7 @@ class DORLAgent(flax.struct.PyTreeNode):
 def get_config():
     config = ml_collections.ConfigDict(
         dict(
-            agent_name='dorl',  # Agent name.
+            agent_name='drol',  # Agent name.
             ob_dims=ml_collections.config_dict.placeholder(list),  # Observation dimensions (set automatically).
             action_dim=ml_collections.config_dict.placeholder(int),  # Action dimension (set automatically).
             lr=3e-4,  # Learning rate.
