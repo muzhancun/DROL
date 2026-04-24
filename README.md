@@ -13,7 +13,7 @@
 <p>
   <a href="">arXiv</a>
   &emsp;
-  <a href="https://muzhancun.github.io/preprints/drol">Project Page</a>
+  <a href="https://muzhancun.github.io/preprints/DROL">Project Page</a>
 </p>
 
 <a href="assets/teaser.pdf">
