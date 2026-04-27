@@ -11,7 +11,7 @@
 </div>
 
 <p>
-  <a href="">arXiv</a>
+  <a href="https://arxiv.org/pdf/2604.22229">arXiv</a>
   &emsp;
   <a href="https://muzhancun.github.io/preprints/DROL">Project Page</a>
 </p>
